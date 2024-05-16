@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="056ee1dd-696c-4f27-8dd7-70825accfe16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/GameManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Gun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../01-community/app.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../01-community/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../01-community/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
