@@ -17,14 +17,8 @@ public class Gun {
         return;
     }
 
-    public void removeBullet(){
-        int b = bullets.remove(0);
-        if (b!=0){
-            System.out.println("실탄이 제거되었습니다.");
-        } else {
-            System.out.println("공포탄이 제거되었습니다.");
-        }
-        return;
+    public int removeBullet(){
+        return bullets.remove(0);
     }
 
     public Boolean isReal() {

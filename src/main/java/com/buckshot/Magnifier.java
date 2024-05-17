@@ -12,7 +12,12 @@ public class Magnifier extends GunItem{
     }
 
     public void checkReal(){
-        return;
+        int b = gun.removeBullet();
+        if (b!=0){
+            System.out.println("실탄이 제거되었습니다.");
+        } else {
+            System.out.println("공포탄이 제거되었습니다.");
+        }
     }
 
 }
