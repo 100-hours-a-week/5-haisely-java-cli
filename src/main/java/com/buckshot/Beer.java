@@ -12,6 +12,10 @@ public class Beer extends GunItem{
     }
 
     public void dumpBullet(){
-        return;
+        if (gun.isReal()){
+            System.out.println("실탄이 장착되어 있습니다.");
+        } else {
+            System.out.println("공포탄이 장착되어 있습니다.");
+        }
     }
 }

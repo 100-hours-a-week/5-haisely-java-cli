@@ -9,8 +9,7 @@
       <change beforePath="$PROJECT_DIR$/../../01-community/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../01-community/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Magnifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Magnifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Beer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
