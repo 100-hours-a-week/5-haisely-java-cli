@@ -27,6 +27,7 @@ public class User {
 
         if(!isFree){
             System.out.println(this.name + "이 수갑에 묶여있어 차례가 넘어갑니다.\n");
+            setFree(true);
             return;
         }
         Scanner sc = new Scanner(System.in);
@@ -103,14 +104,6 @@ public class User {
 
     public void setEnemy(User enemy) {
         this.enemy = enemy;
-    }
-
-    public boolean isFree() {
-        return isFree;
-    }
-
-    public void setFree(boolean free) {
-        isFree = free;
     }
 
     public Boolean getFree() {
