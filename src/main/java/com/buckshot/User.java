@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class User {
     private int health;
     private String name;
-    private List<Item> items = new ArrayList<Item>();
+    private ArrayList<Item> items = new ArrayList<Item>();
     private Gun gun;
     private User enemy;
     private Boolean isFree;
@@ -82,11 +82,11 @@ public class User {
         this.name = name;
     }
 
-    public List<Item> getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void setItems(List<Item> items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 
