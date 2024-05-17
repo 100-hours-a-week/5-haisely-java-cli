@@ -4,14 +4,13 @@ package com.buckshot;
 import java.util.ArrayList;
 
 public class Gun {
-    private ArrayList<Boolean> bullets = new ArrayList<Boolean>();
-    private int damage = 1;
+    private ArrayList<Integer> bullets = new ArrayList<Integer>();
 
     public void shoot(User target){
-        Boolean b = bullets.remove(0);
-        if (b){
+        int b = bullets.remove(0);
+        if (b!=0){
             System.out.println("탕!!!!!");
-            target.changeHealth(-damage);
+            target.changeHealth(-b);
         } else {
             System.out.println("틱...");
         }
@@ -19,8 +18,8 @@ public class Gun {
     }
 
     public void removeBullet(){
-        Boolean b = bullets.remove(0);
-        if (b){
+        int b = bullets.remove(0);
+        if (b!=0){
             System.out.println("실탄이 제거되었습니다.");
         } else {
             System.out.println("공포탄이 제거되었습니다.");
@@ -29,33 +28,30 @@ public class Gun {
     }
 
     public Boolean isReal() {
-        return bullets.get(0);
+        return bullets.get(0)!=0;
     }
 
     public Boolean isReal(int num){
         if (bullets.size() < num){
             return false;
         }
-        return bullets.get(num);
+        return bullets.get(num)!=0;
     }
 
     public Boolean isEmptyBullet(){
         return bullets.isEmpty();
     }
 
-    public ArrayList<Boolean> getBullets() {
+    public void setBulletDamage(int damage){
+        bullets.set(0, damage);
+        return;
+    }
+
+    public ArrayList<Integer> getBullets() {
         return bullets;
     }
 
-    public void setBullets(ArrayList<Boolean> bullets) {
+    public void setBullets(ArrayList<Integer> bullets) {
         this.bullets = bullets;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
     }
 }
