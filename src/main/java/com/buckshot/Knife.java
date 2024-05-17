@@ -1,4 +1,16 @@
 package com.buckshot;
 
-public @interface Knife {
+public class Knife extends GunItem{
+    public Knife(Gun gun) {
+        super(gun);
+    }
+
+    @Override
+    public void use(){
+        doubleDamage();
+    }
+
+    private void doubleDamage(){
+        return;
+    }
 }
