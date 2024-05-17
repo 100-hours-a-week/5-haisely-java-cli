@@ -8,19 +8,39 @@ public class Gun {
     private int damage = 1;
 
     public void shoot(User target){
+        Boolean b = bullets.remove(0);
+        if (b){
+            System.out.println("탕!!!!!");
+            target.changeHealth(-damage);
+        } else {
+            System.out.println("틱...");
+        }
         return;
     }
 
     public void removeBullet(){
+        Boolean b = bullets.remove(0);
+        if (b){
+            System.out.println("실탄이 제거되었습니다.");
+        } else {
+            System.out.println("공포탄이 제거되었습니다.");
+        }
         return;
     }
 
     public Boolean isReal() {
-        return true;
+        return bullets.get(0);
     }
 
     public Boolean isReal(int num){
-        return true;
+        if (bullets.size() < num){
+            return false;
+        }
+        return bullets.get(num);
+    }
+
+    public Boolean isEmptyBullet(){
+        return bullets.isEmpty();
     }
 
     public ArrayList<Boolean> getBullets() {

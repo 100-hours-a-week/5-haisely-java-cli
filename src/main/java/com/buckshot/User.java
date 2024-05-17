@@ -31,7 +31,7 @@ public class User {
         }
         Scanner sc = new Scanner(System.in);
 
-        while(myTurn){
+        while(myTurn && !gun.isEmptyBullet()){
             System.out.println("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기\n");
             System.out.println("액션을 선택하세요 > ");
             int option = sc.nextInt();
@@ -59,6 +59,10 @@ public class User {
 
     private void printItem(){
 
+    }
+
+    public void changeHealth(int damage){
+        this.health += damage;
     }
 
     public int getHealth() {
