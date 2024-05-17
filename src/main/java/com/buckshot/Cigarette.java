@@ -7,7 +7,7 @@ public class Cigarette extends UserItem{
 
     @Override
     public void use(){
-        incHealth();s
+        incHealth();
     }
 
     public void incHealth(){
