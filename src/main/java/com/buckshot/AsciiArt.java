@@ -1,5 +1,7 @@
 package com.buckshot;
 
+import java.util.ArrayList;
+
 public class AsciiArt {
     public static String start = "--------------------------------------------------------------------------------\n" +
             "                                                                                \n" +
@@ -33,11 +35,10 @@ public class AsciiArt {
 
     public static void printCenteredStringPretty(String input) {
         int totalWidth = 80;  // 전체 너비
-        String base = "⋆﹥━━━━━━━ %s ━━━━━━━﹤⋆";
+        String base = "*﹥   %s   ﹤*";
         String formatted = String.format(base, input);
 
         int padding = (totalWidth - formatted.length()) / 2;
-        padding -=2;
         String output = " ".repeat(Math.max(0, padding)) + formatted;  // 중앙 정렬
 
         System.out.println("--------------------------------------------------------------------------------");
@@ -50,5 +51,57 @@ public class AsciiArt {
         int padding = (totalWidth-input.length()) / 2 - margin;  // 패딩 계산
         String output = " ".repeat(padding) +input;
         System.out.print(output);
+    }
+
+    public static void printState(User p1, User p2){
+        String base =
+                "player 1                                                               player 2\n" +
+                "--------------------------------------------------------------------------------\n" +
+                "|  1           |  2           |                  |  1           |  2           |\n" +
+                "|  %s      |  %s      |                  |  %s      |  %s      |\n" +
+                "--------------------------------------------------------------------------------\n" +
+                "|  3           |  4           |                  |  3           |  4           |\n" +
+                "|  %s      |  %s      |                  |  %s      |  %s      |\n" +
+                "--------------------------------------------------------------------------------\n" +
+                "%s                                                                    %s\n";
+        String formatted = getString(p1, p2, base);
+        System.out.println(formatted);
+    }
+
+    private static String getString(User p1, User p2, String base) {
+        ArrayList<String> items = new ArrayList<>();
+        for (int i = 0; i< 4; i++){
+            if(i>= p1.getItems().size()){
+                items.add("      ");
+            }else {
+                items.add(p1.getItems().get(i).getName());
+            }
+        }
+        for (int i = 0; i< 4; i++){
+            if(i>= p2.getItems().size()){
+                items.add("      ");
+            }else {
+                items.add(p2.getItems().get(i).getName());
+            }
+        }
+        String p1Health = "";
+        String p2Health = "";
+        for (int i = 0; i<6; i++){
+            if(i< p1.getHealth()){
+                p1Health +="◼";
+            }else{
+                p1Health += "□";
+            }
+        }
+        for (int i = 0; i<6; i++){
+            if(i<6- p2.getHealth()){
+                p2Health +="□";
+            }else{
+                p2Health += "◼";
+            }
+        }
+
+        String formatted = String.format(base, items.get(0), items.get(1), items.get(4),items.get(5), items.get(2), items.get(3), items.get(6), items.get(7), p1Health, p2Health);
+        return formatted;
     }
 }

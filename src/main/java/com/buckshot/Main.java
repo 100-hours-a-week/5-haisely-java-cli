@@ -11,10 +11,13 @@ public class Main {
 
         while (player1.getHealth()>0 && player2.getHealth()>0){
             gm.initRound();
+            AsciiArt.printState(player1, player2);
             while(!gun.isEmptyBullet() && player1.getHealth()>0 && player2.getHealth()>0) {
-                player1.myTurn();
+                if (player1.getMyTurn()) {player1.myTurn();}
+                AsciiArt.printState(player1, player2);
                 if (player1.getHealth()<=0 && player2.getHealth()<=0) break;
                 player2.myTurn();
+                AsciiArt.printState(player1, player2);
             }
         }
 

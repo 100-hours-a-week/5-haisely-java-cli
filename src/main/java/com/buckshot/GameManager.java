@@ -78,13 +78,13 @@ public class GameManager {
         AsciiArt.printCenteredString("   >  ", 8);
         String playerName1 = scanner.nextLine();
         p1.setName(playerName1);
-        AsciiArt.printCenteredStringPretty("Player 1: " + playerName1);
+        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0);
 
         AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.");
         AsciiArt.printCenteredString("   >  ", 8);
         String playerName2 = scanner.nextLine();
         p2.setName(playerName2);
-        AsciiArt.printCenteredStringPretty("Player 2: " + playerName2);
+        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
         return;
     }
 

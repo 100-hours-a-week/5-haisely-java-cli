@@ -3,7 +3,7 @@ package com.buckshot;
 public class Beer extends GunItem{
     public Beer(Gun gun) {
         super(gun);
-        this.name = "맥주";
+        this.name = "맥주  ";
     }
 
     @Override
@@ -12,10 +12,11 @@ public class Beer extends GunItem{
     }
 
     public void dumpBullet(){
-        if (gun.isReal()){
-            System.out.println("실탄이 장착되어 있습니다.");
+        int b = gun.removeBullet();
+        if (b!=0){
+            System.out.println("실탄이 제거되었습니다.");
         } else {
-            System.out.println("공포탄이 장착되어 있습니다.");
+            System.out.println("공포탄이 제거되었습니다.");
         }
     }
 }
