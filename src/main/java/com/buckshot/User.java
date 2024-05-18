@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class User {
-    private int health;
+    private int health =6;
     private String name;
     private ArrayList<Item> items = new ArrayList<Item>();
     private Gun gun;
     private User enemy;
-    private Boolean isFree;
-    private Boolean myTurn;
+    private Boolean isFree = true;
+    private Boolean myTurn = true;
+    private Scanner scanner;
 
     public void useItem(int index){
         Item i = items.get(index -1);
@@ -23,23 +24,22 @@ public class User {
 
     public void myTurn(){
         // 1. 아이템 사용 // 2. 나에게 쏘기 // 3. 적에게 쏘기
-        System.out.println(this.name + "의 차례입니다.\n");
+        AsciiArt.printCenteredStringPretty(this.name + "의 차례입니다.");
 
         if(!isFree){
-            System.out.println(this.name + "이 수갑에 묶여있어 차례가 넘어갑니다.\n");
+            System.out.println(this.name + "이 수갑에 묶여있어 차례가 넘어갑니다.");
             setFree(true);
             return;
         }
-        Scanner sc = new Scanner(System.in);
 
         while(myTurn && !gun.isEmptyBullet()){
-            System.out.println("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기\n");
-            System.out.println("액션을 선택하세요 > ");
-            int option = sc.nextInt();
+            AsciiArt.printCenteredStringPretty("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기");
+            AsciiArt.printCenteredString("   >  ", 8);
+            int option = Integer.parseInt(scanner.nextLine());
             switch (option){
                 case 1:
                     System.out.println("아이템을 선택하세요 > ");
-                    int itemIndex = sc.nextInt();
+                    int itemIndex = Integer.parseInt(scanner.nextLine());
                     useItem(itemIndex);
                     break;
                 case 2:
@@ -120,5 +120,9 @@ public class User {
 
     public void setMyTurn(Boolean myTurn) {
         this.myTurn = myTurn;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 }
