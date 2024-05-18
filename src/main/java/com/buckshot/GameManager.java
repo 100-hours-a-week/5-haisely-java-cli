@@ -2,12 +2,13 @@ package com.buckshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Scanner;
 
 public class GameManager {
     private final User p1;
     private final User p2;
     private final Gun gun;
+    private int round = 1;
 
     public GameManager(User p1, User p2, Gun gun) {
         this.p1 = p1;
@@ -62,10 +63,27 @@ public class GameManager {
     }
 
     public void initGame(){
+        Scanner scanner = new Scanner(System.in);
+        // 메시지 출력
+        AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.");
+        AsciiArt.printCenteredString("   >  ", 8);
+        String playerName1 = scanner.nextLine();
+        p1.setName(playerName1);
+        AsciiArt.printCenteredStringPretty("Player 1: " + playerName1);
+
+        AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.");
+        AsciiArt.printCenteredString("   >  ", 8);
+        String playerName2 = scanner.nextLine();
+        p2.setName(playerName2);
+        AsciiArt.printCenteredStringPretty("Player 2: " + playerName2);
+        scanner.close();
         return;
     }
 
     public void initRound(){
-
+        AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.");
+        randomBullets(this.gun);
+        randomItems(this.p1);
+        randomItems(this.p2);
     }
 }
