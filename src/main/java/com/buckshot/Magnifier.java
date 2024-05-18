@@ -3,6 +3,7 @@ package com.buckshot;
 public class Magnifier extends GunItem{
     public Magnifier(Gun gun) {
         super(gun);
+        this.name = "돋보기";
     }
 
     @Override
@@ -11,7 +12,11 @@ public class Magnifier extends GunItem{
     }
 
     public void checkReal(){
-        return;
+        if (gun.isReal()){
+            System.out.println("실탄이 장착되어 있습니다.");
+        } else {
+            System.out.println("공포탄이 장착되어 있습니다.");
+        }
     }
 
 }
