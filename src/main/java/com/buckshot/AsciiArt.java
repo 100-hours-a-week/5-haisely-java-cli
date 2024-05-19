@@ -53,7 +53,7 @@ public class AsciiArt {
         System.out.print(output);
     }
 
-    public static void printState(User p1, User p2){
+    public static void printState(GameManager gm){
         String base =
                 "player 1                                                               player 2\n" +
                 "--------------------------------------------------------------------------------\n" +
@@ -64,11 +64,13 @@ public class AsciiArt {
                 "|  %s      |  %s      |                  |  %s      |  %s      |\n" +
                 "--------------------------------------------------------------------------------\n" +
                 "%s                                                                    %s\n";
-        String formatted = getString(p1, p2, base);
+        String formatted = getString(gm, base);
         System.out.println(formatted);
     }
 
-    private static String getString(User p1, User p2, String base) {
+    private static String getString(GameManager gm, String base) {
+        User p1 = gm.getP1();
+        User p2 = gm.getP2();
         ArrayList<String> items = new ArrayList<>();
         for (int i = 0; i< 4; i++){
             if(i>= p1.getItems().size()){
