@@ -13,8 +13,8 @@ public class Main {
             gm.initRound();
             while(gm.canTurn()) {
                 if (player1.getMyTurn()) { player1.myTurn();}
-                if (gm.canTurn()) break;
-                AsciiArt.printState(gm); player2.myTurn();
+                if (!gm.canTurn()) break;
+                player2.myTurn();
             }
         }
         gm.endGame();

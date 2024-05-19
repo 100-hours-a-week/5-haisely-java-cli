@@ -13,6 +13,7 @@ public class User {
     private Boolean isFree = true;
     private Boolean myTurn = true;
     private Scanner scanner;
+    private GameManager gm;
 
     public void useItem(int index){
         Item i = items.get(index -1);
@@ -33,6 +34,7 @@ public class User {
             return;
         }
         while(myTurn && !gun.isEmptyBullet()){
+            AsciiArt.printState(this.gm);
             AsciiArt.printCenteredStringPretty("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기");
             AsciiArt.printCenteredString("   >  ", 8);
             int option = Integer.parseInt(scanner.nextLine());
@@ -130,5 +132,9 @@ public class User {
 
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
+    }
+
+    public void setGm(GameManager gm) {
+        this.gm = gm;
     }
 }

@@ -15,12 +15,18 @@ public class GameManager {
         this.p1 = p1;
         this.p2 = p2;
         this.gun = gun;
+        initializeGame();
+    }
+
+    private void initializeGame(){
         this.p1.setGun(gun);
         this.p2.setGun(gun);
         this.p1.setScanner(this.scanner);
         this.p2.setScanner(this.scanner);
         this.p1.setEnemy(p2);
         this.p2.setEnemy(p1);
+        this.p1.setGm(this);
+        this.p2.setGm(this);
     }
 
 
