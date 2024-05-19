@@ -5,13 +5,14 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class GameManager {
+    public static GameManager gm = new GameManager(new User(), new User(), new Gun());
     private final User p1;
     private final User p2;
     private final Gun gun;
     private int round = 1;
     private static final Scanner scanner = new Scanner(System.in);
 
-    public GameManager(User p1, User p2, Gun gun) {
+    private GameManager(User p1, User p2, Gun gun) {
         this.p1 = p1;
         this.p2 = p2;
         this.gun = gun;
@@ -21,6 +22,10 @@ public class GameManager {
         this.p2.setScanner(this.scanner);
         this.p1.setEnemy(p2);
         this.p2.setEnemy(p1);
+    }
+
+    public GameManager getInstance() {
+        return gm;
     }
 
     public void randomBullets(Gun gun){
@@ -97,5 +102,21 @@ public class GameManager {
 
     public void endGame(){
         scanner.close();
+    }
+
+    public User getP1() {
+        return p1;
+    }
+
+    public User getP2() {
+        return p2;
+    }
+
+    public Gun getGun() {
+        return gun;
+    }
+
+    public int getRound() {
+        return round;
     }
 }
