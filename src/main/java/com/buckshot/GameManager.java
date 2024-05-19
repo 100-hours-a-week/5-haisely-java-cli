@@ -43,7 +43,7 @@ public class GameManager {
             }else{
                 newBullets.add(0);
             }
-            AsciiArt.printCenteredString("찰칵\n", 0);
+            AsciiArt.printCenteredString("찰칵\n", 0, 500);
         }
         AsciiArt.printCenteredStringPretty("실탄 "+real+" 개, 공포탄 "+ (num-real)+"개가 장전되었습니다.");
         Collections.shuffle(newBullets);
@@ -82,16 +82,16 @@ public class GameManager {
     public void initGame(){
         // 메시지 출력
         AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.");
-        AsciiArt.printCenteredString("   >  ", 8);
+        AsciiArt.printCenteredString("   >  ", 8, 0);
         String playerName1 = scanner.nextLine();
         p1.setName(playerName1);
-        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0);
+        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0, 500);
 
         AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.");
-        AsciiArt.printCenteredString("   >  ", 8);
+        AsciiArt.printCenteredString("   >  ", 8, 0);
         String playerName2 = scanner.nextLine();
         p2.setName(playerName2);
-        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
+        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0, 500);
         return;
     }
 
