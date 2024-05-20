@@ -1,7 +1,6 @@
 package com.buckshot;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class User {
@@ -13,11 +12,14 @@ public class User {
     private Boolean isFree = true;
     private Boolean myTurn = true;
     private Scanner scanner;
+    private GameManager gm;
 
     public void useItem(int index){
         Item i = items.get(index -1);
-        System.out.println(this.name+"이 "+ i.getName()+"을 사용했습니다.");
+        System.out.println(this.name+" "+ i.getName()+"을 사용했습니다.");
+        AsciiArt.sleepMillis(1000);
         i.use();
+        AsciiArt.sleepMillis(1000);
         items.remove(index-1);
         return;
     }
@@ -25,41 +27,51 @@ public class User {
     public void myTurn(){
         // 1. 아이템 사용 // 2. 나에게 쏘기 // 3. 적에게 쏘기
         AsciiArt.printCenteredString(this.name + "의 차례입니다.\n", 0);
+        AsciiArt.sleepMillis(800);
 
         if(!isFree){
-            System.out.println(this.name + "이 수갑에 묶여있어 차례가 넘어갑니다.");
+            System.out.println("\n"+this.name + "가 수갑에 묶여있어 차례가 넘어갑니다.\n");
             setFree(true);
             this.enemy.setMyTurn(true);
+            AsciiArt.sleepMillis(1000);
             return;
         }
         while(myTurn && !gun.isEmptyBullet()){
-            AsciiArt.printCenteredStringPretty("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기");
+            AsciiArt.printState(this.gm);
+            AsciiArt.printCenteredStringPretty("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기", 6);
             AsciiArt.printCenteredString("   >  ", 8);
-            int option = Integer.parseInt(scanner.nextLine());
-            switch (option){
-                case 1:
-                    System.out.println("아이템을 선택하세요 > ");
-                    int itemIndex = Integer.parseInt(scanner.nextLine());
-                    useItem(itemIndex);
-                    break;
-                case 2:
-                    System.out.println(this.name +"가 자신에게 총을 쏩니다.");
-                    boolean cur = gun.isReal();
-                    gun.shoot(this);
-                    if (cur) {
+            try {
+                int option = Integer.parseInt(scanner.nextLine());
+                switch (option) {
+                    case 1:
+                        AsciiArt.printCenteredStringPretty("아이템을 선택하세요.", 3);
+                        AsciiArt.printCenteredString("   >  ", 8);
+                        int itemIndex = Integer.parseInt(scanner.nextLine());
+                        useItem(itemIndex);
+                        break;
+                    case 2:
+                        System.out.println("\n" + this.name + "가 자신에게 총을 쏩니다.\n");
+                        AsciiArt.sleepMillis(500);
+                        boolean cur = gun.isReal();
+                        gun.shoot(this);
+                        if (cur) {
+                            setMyTurn(false);
+                            this.enemy.setMyTurn(true);
+                        }
+                        break;
+                    case 3:
+                        System.out.println("\n"+this.name + "가 " + enemy.name + "에게 총을 쏩니다.\n");
+                        AsciiArt.sleepMillis(500);
+                        gun.shoot(enemy);
                         setMyTurn(false);
                         this.enemy.setMyTurn(true);
-                    }
-                    break;
-                case 3:
-                    System.out.println(this.name +"이 "+ enemy.name+"에게 총을 쏩니다.");
-                    gun.shoot(enemy);
-                    setMyTurn(false);
-                    this.enemy.setMyTurn(true);
-                    break;
-                default:
-                    System.out.println("잘못된 입력입니다.");
-                    break;
+                        break;
+                    default:
+                        System.out.println("잘못된 입력입니다.");
+                        break;
+                }
+            }catch (NumberFormatException e) {
+                System.out.println("잘못된 입력입니다.");
             }
         }
     }
@@ -130,5 +142,9 @@ public class User {
 
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
+    }
+
+    public void setGm(GameManager gm) {
+        this.gm = gm;
     }
 }

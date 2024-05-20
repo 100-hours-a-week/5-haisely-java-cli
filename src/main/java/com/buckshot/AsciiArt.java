@@ -33,12 +33,12 @@ public class AsciiArt {
             "                                                                                \n" +
             "--------------------------------------------------------------------------------\n";
 
-    public static void printCenteredStringPretty(String input) {
+    public static void printCenteredStringPretty(String input, int margin) {
         int totalWidth = 80;  // 전체 너비
         String base = "*﹥   %s   ﹤*";
         String formatted = String.format(base, input);
 
-        int padding = (totalWidth - formatted.length()) / 2;
+        int padding = (totalWidth - formatted.length()) / 2 - margin;
         String output = " ".repeat(Math.max(0, padding)) + formatted;  // 중앙 정렬
 
         System.out.println("--------------------------------------------------------------------------------");
@@ -53,8 +53,9 @@ public class AsciiArt {
         System.out.print(output);
     }
 
-    public static void printState(User p1, User p2){
+    public static void printState(GameManager gm){
         String base =
+                "--------------------------------------------------------------------------------\n" +
                 "player 1                                                               player 2\n" +
                 "--------------------------------------------------------------------------------\n" +
                 "|  1           |  2           |                  |  1           |  2           |\n" +
@@ -64,11 +65,13 @@ public class AsciiArt {
                 "|  %s      |  %s      |                  |  %s      |  %s      |\n" +
                 "--------------------------------------------------------------------------------\n" +
                 "%s                                                                    %s\n";
-        String formatted = getString(p1, p2, base);
+        String formatted = getString(gm, base);
         System.out.println(formatted);
     }
 
-    private static String getString(User p1, User p2, String base) {
+    private static String getString(GameManager gm, String base) {
+        User p1 = gm.getP1();
+        User p2 = gm.getP2();
         ArrayList<String> items = new ArrayList<>();
         for (int i = 0; i< 4; i++){
             if(i>= p1.getItems().size()){
@@ -103,5 +106,37 @@ public class AsciiArt {
 
         String formatted = String.format(base, items.get(0), items.get(1), items.get(4),items.get(5), items.get(2), items.get(3), items.get(6), items.get(7), p1Health, p2Health);
         return formatted;
+    }
+
+    public static void printBang(){
+        String bang = "                                   ____  \",\n" +
+                "                                __,-~~/~    `---.\",\n" +
+                "                              _/_,---(      ,    )\",\n" +
+                "                          __ /        <    /   )  \\\\___\",\n" +
+                "             - ------===;;;'====------------------===;;;===----- -  -\",\n" +
+                "                           \\\\/  ~\\\"~\\\"~\\\"~\\\"~\\\"~\\\\~\\\"~)~\\\"/\",\n" +
+                "                           (_ (   \\\\  (     >    \\\\)\",\n" +
+                "                            \\\\_( _ <         >_>'\",\n" +
+                "                               ~ `-i' ::>|--\\\"\",\n" +
+                "                                   I;|.|.|\",\n" +
+                "                                  <|i::|i|`.\",\n" +
+                "                                 (` ^'\\\"`-' \\\")\",\n" +
+                "                                    B A N G !!!\n";
+        System.out.println(bang);
+    }
+
+    public static void printDot(){
+        for (int i = 3; i >0; i--) {
+            System.out.print(".\n"); // "." 출력
+            sleepMillis(800);
+        }
+    }
+
+    public static void sleepMillis(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            return;
+        }
     }
 }

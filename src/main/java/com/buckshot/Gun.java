@@ -7,22 +7,23 @@ public class Gun {
     private ArrayList<Integer> bullets = new ArrayList<Integer>();
 
     public void shoot(User target){
-        int b = bullets.remove(0);
+        int b = bullets.removeFirst();
+        AsciiArt.printDot();
         if (b!=0){
-            System.out.println("탕!!!!!");
+            AsciiArt.printBang();
             target.changeHealth(-b);
         } else {
-            System.out.println("틱...");
+            AsciiArt.printCenteredString("틱...\n", 0);
         }
         return;
     }
 
     public int removeBullet(){
-        return bullets.remove(0);
+        return bullets.removeFirst();
     }
 
     public Boolean isReal() {
-        return bullets.get(0)!=0;
+        return bullets.getFirst()!=0;
     }
 
     public Boolean isReal(int num){
