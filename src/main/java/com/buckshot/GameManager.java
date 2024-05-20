@@ -98,6 +98,8 @@ public class GameManager {
         p2.setName(playerName2);
         AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
         AsciiArt.sleepMillis(500);
+        randomItems(p1);
+        randomItems(p2);
         return;
     }
 

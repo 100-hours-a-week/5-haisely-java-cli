@@ -13,8 +13,9 @@ public class Gun {
             AsciiArt.printBang();
             target.changeHealth(-b);
         } else {
-            AsciiArt.printCenteredString("틱...\n", 0);
+            AsciiArt.printCenteredString("틱...\n\n", 0);
         }
+        AsciiArt.sleepMillis(500);
         return;
     }
 

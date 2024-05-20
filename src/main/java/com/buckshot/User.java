@@ -16,7 +16,7 @@ public class User {
 
     public void useItem(int index){
         Item i = items.get(index -1);
-        System.out.println(this.name+" "+ i.getName()+"을 사용했습니다.");
+        System.out.println(this.name+"가 "+ i.getName()+"을 사용했습니다.");
         AsciiArt.sleepMillis(1000);
         i.use();
         AsciiArt.sleepMillis(1000);
