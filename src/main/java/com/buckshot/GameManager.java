@@ -35,7 +35,8 @@ public class GameManager {
         int num = 3+(int)(Math.random()*6);
         int limit = (int)(num/3);
         int real = limit + (int)(Math.random()*(num-2*limit+1));
-        AsciiArt.printCenteredStringPretty("총알이 "+num+" 개 장전됩니다.");
+        AsciiArt.printCenteredStringPretty("총알이 "+num+" 개 장전됩니다.", 3);
+        AsciiArt.sleepMillis(1000);
 
         for (int i = 0; i<num; i++){
             if(i<real){
@@ -43,9 +44,12 @@ public class GameManager {
             }else{
                 newBullets.add(0);
             }
-            AsciiArt.printCenteredString("찰칵\n", 0, 500);
+            AsciiArt.printCenteredString("찰칵\n", 0);
+            AsciiArt.sleepMillis(230);
         }
-        AsciiArt.printCenteredStringPretty("실탄 "+real+" 개, 공포탄 "+ (num-real)+"개가 장전되었습니다.");
+        AsciiArt.sleepMillis(270);
+        AsciiArt.printCenteredStringPretty("실탄 "+real+" 개, 공포탄 "+ (num-real)+"개가 장전되었습니다.", 4);
+        AsciiArt.sleepMillis(2000);
         Collections.shuffle(newBullets);
         gun.setBullets(newBullets);
         return;
@@ -81,25 +85,29 @@ public class GameManager {
 
     public void initGame(){
         // 메시지 출력
-        AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.");
-        AsciiArt.printCenteredString("   >  ", 8, 0);
+        AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
+        AsciiArt.printCenteredString("   >  ", 8);
         String playerName1 = scanner.nextLine();
         p1.setName(playerName1);
-        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0, 500);
+        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0);
+        AsciiArt.sleepMillis(500);
 
-        AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.");
-        AsciiArt.printCenteredString("   >  ", 8, 0);
+        AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.", 3);
+        AsciiArt.printCenteredString("   >  ", 8);
         String playerName2 = scanner.nextLine();
         p2.setName(playerName2);
-        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0, 500);
+        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
+        AsciiArt.sleepMillis(500);
         return;
     }
 
     public void initRound(){
-        AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.");
+        AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.", 1);
+        AsciiArt.sleepMillis(1000);
         randomBullets(this.gun);
-        randomItems(this.p1);
-        randomItems(this.p2);
+//        randomItems(this.p1);
+//        randomItems(this.p2);
+        this.round +=1;
     }
 
     public boolean canRound(){
@@ -111,6 +119,12 @@ public class GameManager {
     }
 
     public void endGame(){
+        AsciiArt.sleepMillis(500);
+        if (p1.getHealth()<=0){
+            AsciiArt.printCenteredStringPretty(p2.getName() +"가 승리했습니다!", 3);
+        } else{
+            AsciiArt.printCenteredStringPretty(p1.getName() +"가 승리했습니다!", 3);
+        }
         scanner.close();
     }
 

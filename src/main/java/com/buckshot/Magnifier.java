@@ -13,9 +13,9 @@ public class Magnifier extends GunItem{
 
     public void checkReal(){
         if (gun.isReal()){
-            System.out.println("실탄이 장착되어 있습니다.");
+            System.out.println("실탄이 장착되어 있습니다.\n");
         } else {
-            System.out.println("공포탄이 장착되어 있습니다.");
+            System.out.println("공포탄이 장착되어 있습니다.\n");
         }
     }
 

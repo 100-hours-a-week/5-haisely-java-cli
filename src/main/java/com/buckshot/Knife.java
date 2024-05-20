@@ -13,6 +13,6 @@ public class Knife extends GunItem{
 
     private void doubleDamage(){
         gun.setBulletDamage(2);
-        System.out.println("장착된 총알의 데미지가 2가 되었습니다!");
+        System.out.println("장착된 총알의 데미지가 2가 되었습니다!\n");
     }
 }

@@ -13,7 +13,7 @@ public class Handcuff extends UserItem{
 
     public void lockUser(){
         target.setFree(false);
-        System.out.println(target.getName()+"가 수갑에 묶였습니다!");
+        System.out.println(target.getName()+"가 수갑에 묶였습니다!\n");
         return;
     }
 }

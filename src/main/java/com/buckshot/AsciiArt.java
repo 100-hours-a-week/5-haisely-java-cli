@@ -33,39 +33,29 @@ public class AsciiArt {
             "                                                                                \n" +
             "--------------------------------------------------------------------------------\n";
 
-    public static void printCenteredStringPretty(String input) {
-        try{
+    public static void printCenteredStringPretty(String input, int margin) {
         int totalWidth = 80;  // 전체 너비
         String base = "*﹥   %s   ﹤*";
         String formatted = String.format(base, input);
 
-        int padding = (totalWidth - formatted.length()) / 2;
+        int padding = (totalWidth - formatted.length()) / 2 - margin;
         String output = " ".repeat(Math.max(0, padding)) + formatted;  // 중앙 정렬
 
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println(output);
         System.out.println("--------------------------------------------------------------------------------");
-        Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            return;
-        }
     }
 
-    public static void printCenteredString(String input, int margin, int seconds) {
-        try{
+    public static void printCenteredString(String input, int margin) {
         int totalWidth = 80;
         int padding = (totalWidth-input.length()) / 2 - margin;  // 패딩 계산
         String output = " ".repeat(padding) +input;
         System.out.print(output);
-            Thread.sleep(seconds); // 500밀리초 (0.5초) 동안 스레드를 일시 정지
-        } catch (InterruptedException e) {
-            return;
-        }
     }
 
     public static void printState(GameManager gm){
-        try {
         String base =
+                "--------------------------------------------------------------------------------\n" +
                 "player 1                                                               player 2\n" +
                 "--------------------------------------------------------------------------------\n" +
                 "|  1           |  2           |                  |  1           |  2           |\n" +
@@ -77,10 +67,6 @@ public class AsciiArt {
                 "%s                                                                    %s\n";
         String formatted = getString(gm, base);
         System.out.println(formatted);
-        Thread.sleep(500);
-        } catch (InterruptedException e) {
-            return;
-        }
     }
 
     private static String getString(GameManager gm, String base) {
@@ -135,18 +121,22 @@ public class AsciiArt {
                 "                                   I;|.|.|\",\n" +
                 "                                  <|i::|i|`.\",\n" +
                 "                                 (` ^'\\\"`-' \\\")\",\n" +
-                "                     B A N G !!!\n";
+                "                                    B A N G !!!\n";
         System.out.println(bang);
     }
 
     public static void printDot(){
         for (int i = 3; i >0; i--) {
-            try {
-                System.out.print(".\n"); // "." 출력
-                Thread.sleep(800); // 500밀리초 (0.5초) 동안 스레드를 일시 정지
-            } catch (InterruptedException e) {
-                return;
-            }
+            System.out.print(".\n"); // "." 출력
+            sleepMillis(800);
+        }
+    }
+
+    public static void sleepMillis(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            return;
         }
     }
 }
