@@ -1,6 +1,8 @@
-package com.buckshot;
+package com.buckshot.Items;
 
-public class Magnifier extends GunItem{
+import com.buckshot.Core.Gun;
+
+public class Magnifier extends GunItem {
     public Magnifier(Gun gun) {
         super(gun);
         this.name = "돋보기";

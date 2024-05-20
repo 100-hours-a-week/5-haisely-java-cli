@@ -1,6 +1,8 @@
-package com.buckshot;
+package com.buckshot.Items;
 
-public class Handcuff extends UserItem{
+import com.buckshot.Core.User;
+
+public class Handcuff extends UserItem {
     public Handcuff(User target) {
         super(target);
         this.name = "수갑  ";

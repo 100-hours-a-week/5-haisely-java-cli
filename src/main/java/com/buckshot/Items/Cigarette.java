@@ -1,6 +1,8 @@
-package com.buckshot;
+package com.buckshot.Items;
 
-public class Cigarette extends UserItem{
+import com.buckshot.Core.User;
+
+public class Cigarette extends UserItem {
     public Cigarette(User target) {
         super(target);
         this.name = "담배  ";

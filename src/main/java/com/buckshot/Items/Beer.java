@@ -1,6 +1,8 @@
-package com.buckshot;
+package com.buckshot.Items;
 
-public class Beer extends GunItem{
+import com.buckshot.Core.Gun;
+
+public class Beer extends GunItem {
     public Beer(Gun gun) {
         super(gun);
         this.name = "맥주  ";
