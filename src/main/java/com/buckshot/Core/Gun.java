@@ -1,5 +1,7 @@
-package com.buckshot;
+package com.buckshot.Core;
 
+
+import com.buckshot.Manager.AsciiArt;
 
 import java.util.ArrayList;
 

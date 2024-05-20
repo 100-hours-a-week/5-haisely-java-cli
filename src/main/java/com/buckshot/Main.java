@@ -1,5 +1,10 @@
 package com.buckshot;
 
+import com.buckshot.Core.Gun;
+import com.buckshot.Core.User;
+import com.buckshot.Manager.AsciiArt;
+import com.buckshot.Manager.GameManager;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(AsciiArt.start);

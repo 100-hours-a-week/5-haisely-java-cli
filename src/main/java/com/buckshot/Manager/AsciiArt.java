@@ -1,4 +1,6 @@
-package com.buckshot;
+package com.buckshot.Manager;
+
+import com.buckshot.Core.User;
 
 import java.util.ArrayList;
 

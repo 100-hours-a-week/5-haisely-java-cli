@@ -1,4 +1,4 @@
-package com.buckshot;
+package com.buckshot.Items;
 
 public class Item {
     String name;

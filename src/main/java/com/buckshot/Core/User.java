@@ -1,4 +1,8 @@
-package com.buckshot;
+package com.buckshot.Core;
+
+import com.buckshot.Items.Item;
+import com.buckshot.Manager.AsciiArt;
+import com.buckshot.Manager.GameManager;
 
 import java.util.ArrayList;
 import java.util.Scanner;

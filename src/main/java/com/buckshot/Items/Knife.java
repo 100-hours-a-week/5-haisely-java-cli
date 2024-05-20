@@ -1,6 +1,8 @@
-package com.buckshot;
+package com.buckshot.Items;
 
-public class Knife extends GunItem{
+import com.buckshot.Core.Gun;
+
+public class Knife extends GunItem {
     public Knife(Gun gun) {
         super(gun);
         this.name = "식칼  ";

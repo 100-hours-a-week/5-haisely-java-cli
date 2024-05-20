@@ -1,4 +1,8 @@
-package com.buckshot;
+package com.buckshot.Manager;
+
+import com.buckshot.Core.Gun;
+import com.buckshot.Core.User;
+import com.buckshot.Items.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
