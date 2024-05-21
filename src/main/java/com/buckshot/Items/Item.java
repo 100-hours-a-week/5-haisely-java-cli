@@ -4,7 +4,7 @@ public class Item {
     String name;
     String description;
     public void use(){
-        return;
+        decribeItem();
     }
 
     public String getName() {

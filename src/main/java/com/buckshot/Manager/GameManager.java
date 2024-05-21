@@ -76,7 +76,7 @@ public class GameManager {
             case 2 -> new Handcuff(user.getEnemy());
             case 3 -> new Knife(this.gun);
             case 4 -> new Magnifier(this.gun);
-            default -> null;
+            default -> throw new IllegalArgumentException("Invalid item ID: " + randNum);
         };
     }
 
