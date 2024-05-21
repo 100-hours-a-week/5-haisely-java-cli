@@ -76,13 +76,12 @@ public class User {
                 }
             }catch (NumberFormatException e) {
                 System.out.println("잘못된 입력입니다.");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
     }
 
-    private void printItem(){
-
-    }
 
     public void changeHealth(int damage){
         this.health += damage;
