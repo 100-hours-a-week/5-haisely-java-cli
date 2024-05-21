@@ -23,7 +23,7 @@ java com.buckshot.Main
 ```
 
 
-## 코트 구조
+## 코드 구조
 
 
 ```java
