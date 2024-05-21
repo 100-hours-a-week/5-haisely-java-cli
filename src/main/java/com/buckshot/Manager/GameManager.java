@@ -63,28 +63,21 @@ public class GameManager {
         ArrayList<Item> newItems = new ArrayList<Item>();
         for (int i = 0; i<4 ; i++){
             int randNum = (int)(Math.random()*5);
-            switch (randNum){
-                case 0:
-                    newItems.add(new Beer(this.gun));
-                    break;
-                case 1:
-                    newItems.add(new Cigarette(user));
-                    break;
-                case 2:
-                    newItems.add(new Handcuff(user.getEnemy()));
-                    break;
-                case 3:
-                    newItems.add(new Knife(this.gun));
-                    break;
-                case 4:
-                    newItems.add(new Magnifier(this.gun));
-                    break;
-                default:
-                    break;
-            }
+            newItems.add(getItemsById(randNum, user));
         }
         user.setItems(newItems);
         return;
+    }
+
+    public Item getItemsById(int randNum, User user) {
+        return switch (randNum) {
+            case 0 -> new Beer(this.gun);
+            case 1 -> new Cigarette(user);
+            case 2 -> new Handcuff(user.getEnemy());
+            case 3 -> new Knife(this.gun);
+            case 4 -> new Magnifier(this.gun);
+            default -> null;
+        };
     }
 
     public void initGame(){
@@ -111,8 +104,6 @@ public class GameManager {
         AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.", 1);
         AsciiArt.sleepMillis(1000);
         randomBullets(this.gun);
-//        randomItems(this.p1);
-//        randomItems(this.p2);
         this.round +=1;
     }
 
@@ -131,6 +122,16 @@ public class GameManager {
         } else{
             AsciiArt.printCenteredStringPretty(p1.getName() +"가 승리했습니다!", 3);
         }
+        scannerClose();
+    }
+
+    public void drawGame(){
+        AsciiArt.sleepMillis(500);
+        AsciiArt.printCenteredStringPretty("무승부입니다!", 3);
+        scannerClose();
+    }
+
+    public void scannerClose(){
         scanner.close();
     }
 

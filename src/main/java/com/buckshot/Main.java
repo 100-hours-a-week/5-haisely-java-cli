@@ -14,15 +14,26 @@ public class Main {
         Gun gun = new Gun();
         GameManager gm = new GameManager(player1, player2, gun);
         gm.initGame();
-
-        while (gm.canRound()){
-            gm.initRound();
-            while(gm.canTurn()) {
-                if (player1.getMyTurn()) { player1.myTurn();}
-                if (!gm.canTurn()) break;
-                player2.myTurn();
+        try {
+            for (int i = 0; i < 10; i++) {
+                gm.initRound();
+                while (gm.canTurn()) {
+                    if (player1.getMyTurn()) {
+                        player1.myTurn();
+                    }
+                    if (!gm.canTurn()) break;
+                    player2.myTurn();
+                }
+                if (!gm.canRound()) {
+                    gm.endGame();
+                    return;
+                }
             }
+            gm.drawGame();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            gm.scannerClose();
         }
-        gm.endGame();
     }
 }

@@ -9,19 +9,7 @@
       <change beforePath="$PROJECT_DIR$/../../01-community/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../01-community/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/AsciiArt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/AsciiArt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Beer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Cigarette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Cigarette.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/GunItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/GunItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Handcuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Handcuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Knife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Knife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Magnifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Magnifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/UserItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/UserItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Cigarette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Cigarette.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,21 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;Gradle.5-haisely-java-cli [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GameManager&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/haejangjang/Desktop/haisely/network school/assignments/06-assignment/5-haisely-java-cli/src/main/java/com/buckshot/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "Gradle.5-haisely-java-cli [:Main.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Refactor",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "/Users/haejangjang/Desktop/haisely/network school/assignments/06-assignment/5-haisely-java-cli/src/main/java/com/buckshot/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,5 +81,16 @@
       <updated>1715879383754</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
