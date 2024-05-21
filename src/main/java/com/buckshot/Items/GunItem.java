@@ -11,6 +11,7 @@ public class GunItem extends Item{
     public void describeGun(){}
     @Override
     public void use(){
+        super.use();
         useGun(this.gun);
         describeGun();
     }

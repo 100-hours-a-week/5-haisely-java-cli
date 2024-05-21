@@ -11,6 +11,7 @@ public class UserItem extends Item {
     public void describeUser(){}
     @Override
     public void use(){
+        super.use();
         useUser(this.target);
         describeUser();
     }
