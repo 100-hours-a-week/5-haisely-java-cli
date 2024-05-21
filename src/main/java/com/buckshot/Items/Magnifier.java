@@ -3,10 +3,13 @@ package com.buckshot.Items;
 import com.buckshot.Core.Gun;
 
 public class Magnifier extends GunItem {
+    private int index;
     private boolean isReal;
     public Magnifier(Gun gun) {
         super(gun);
         this.name = "돋보기";
+        this.description = "장착된 총알의 실탄 여부를 확인합니다.";
+        this.index = 0;
     }
 
     @Override
@@ -25,5 +28,13 @@ public class Magnifier extends GunItem {
 
     public void checkReal(Gun gun){
         this.isReal = gun.isReal();
+    }
+
+    public void checkRealByIndex(Gun gun){
+        this.isReal = gun.isReal(this.index);
+    }
+
+    public void setIndex(int i){
+        this.index = i;
     }
 }
