@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="056ee1dd-696c-4f27-8dd7-70825accfe16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../01-community/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../01-community/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../01-community/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/GunItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/GunItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Handcuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Handcuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/UserItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Items/UserItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/Gun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +43,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -65,14 +65,18 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultPlantUmlFileTemplate": "UML Class",
     "Gradle.5-haisely-java-cli [:Main.main()].executor": "Run",
+    "Gradle.5-haisely-java-cli 빌드.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Refactor",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/haisely/Desktop/bg/cloudSchool/5-haisely-java-cli",
     "onboarding.tips.debug.path": "/Users/haejangjang/Desktop/haisely/network school/assignments/06-assignment/5-haisely-java-cli/src/main/java/com/buckshot/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "애플리케이션.Main.executor": "Run"
   }
 }]]></component>
   <component name="RunManager">
@@ -91,9 +95,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="애플리케이션.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-3183f394aec4-8ce719b4" />
+        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
+        <option value="jdk-21.0.2-corretto-21.0.2-f644763e9732-d6553c93" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

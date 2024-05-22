@@ -2,7 +2,6 @@ package com.buckshot.Core;
 
 
 import com.buckshot.Manager.AsciiArt;
-
 import java.util.ArrayList;
 
 public class Gun {
