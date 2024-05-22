@@ -13,8 +13,8 @@ public class Main {
         User player2 = new User();
         Gun gun = new Gun();
         GameManager gm = new GameManager(player1, player2, gun);
-        gm.startGame();
         try {
+            gm.startGame();
             for (int i = 0; i < 10; i++) {
                 gm.startRound();
                 while (gm.canTurn()) {
