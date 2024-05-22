@@ -11,7 +11,7 @@
 - **프로젝트 이름** : Buckshot Roulette
 - **원작** : [Buckshot Roulette (steam)](https://store.steampowered.com/app/2835570/Buckshot_Roulette/?l=koreana)
 - **프로젝트 개발 기간** : 2024.05.16 ~
-- **개발 언어** : Java 17
+- **개발 언어** : Java 21
 - **개발 IDE** : IntelliJ IDEA CE
 
 ## 프로젝트 실행 방법
