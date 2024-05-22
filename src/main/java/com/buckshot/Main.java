@@ -13,10 +13,10 @@ public class Main {
         User player2 = new User();
         Gun gun = new Gun();
         GameManager gm = new GameManager(player1, player2, gun);
-        gm.initGame();
+        gm.startGame();
         try {
             for (int i = 0; i < 10; i++) {
-                gm.initRound();
+                gm.startRound();
                 while (gm.canTurn()) {
                     if (player1.getMyTurn()) {
                         player1.myTurn();

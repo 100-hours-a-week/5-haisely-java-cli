@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="056ee1dd-696c-4f27-8dd7-70825accfe16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Core/Gun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/buckshot/Manager/GameManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
     "Gradle.5-haisely-java-cli 빌드.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Refactor",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/haisely/Desktop/bg/cloudSchool/5-haisely-java-cli",
     "onboarding.tips.debug.path": "/Users/haejangjang/Desktop/haisely/network school/assignments/06-assignment/5-haisely-java-cli/src/main/java/com/buckshot/Main.java",

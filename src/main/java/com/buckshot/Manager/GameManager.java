@@ -80,7 +80,7 @@ public class GameManager {
         };
     }
 
-    public void initGame(){
+    public void startGame(){
         // 메시지 출력
         AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
         AsciiArt.printCenteredString("   >  ", 8);
@@ -100,7 +100,7 @@ public class GameManager {
         return;
     }
 
-    public void initRound(){
+    public void startRound(){
         AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.", 1);
         AsciiArt.sleepMillis(1000);
         randomBullets(this.gun);
