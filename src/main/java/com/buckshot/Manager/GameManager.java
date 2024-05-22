@@ -15,6 +15,9 @@ public class GameManager {
     private int round = 1;
     private static final Scanner scanner = new Scanner(System.in);
 
+    final int ITEM_COUNT = 4;
+    final int ITEM_NUMBER = 5;
+
     public GameManager(User p1, User p2, Gun gun) {
         this.p1 = p1;
         this.p2 = p2;
@@ -61,8 +64,8 @@ public class GameManager {
 
     public void randomItems(User user){
         ArrayList<Item> newItems = new ArrayList<Item>();
-        for (int i = 0; i<4 ; i++){
-            int randNum = (int)(Math.random()*5);
+        for (int i = 0; i<ITEM_COUNT ; i++){
+            int randNum = (int)(Math.random()*ITEM_NUMBER);
             newItems.add(getItemsById(randNum, user));
         }
         user.setItems(newItems);
