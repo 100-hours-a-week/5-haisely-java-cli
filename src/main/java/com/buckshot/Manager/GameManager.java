@@ -6,6 +6,7 @@ import com.buckshot.Items.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameManager {
@@ -83,24 +84,35 @@ public class GameManager {
         };
     }
 
-    public void startGame(){
-        // 메시지 출력
-        AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
-        AsciiArt.printCenteredString("   >  ", 8);
-        String playerName1 = scanner.nextLine();
-        p1.setName(playerName1);
-        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0);
-        AsciiArt.sleepMillis(500);
 
-        AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.", 3);
-        AsciiArt.printCenteredString("   >  ", 8);
-        String playerName2 = scanner.nextLine();
-        p2.setName(playerName2);
-        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
-        AsciiArt.sleepMillis(500);
-        randomItems(p1);
-        randomItems(p2);
-        return;
+    public void startGame(){
+        for (int i = 0; i < 10; i++) {
+            // 메시지 출력
+            try {
+                AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
+                AsciiArt.printCenteredString("   >  ", 8);
+                String playerName1 = scanner.nextLine();
+                p1.setName(playerName1);
+                AsciiArt.printCenteredString("Player 1: " + playerName1 + '\n', 0);
+                AsciiArt.sleepMillis(500);
+                AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.", 3);
+                AsciiArt.printCenteredString("   >  ", 8);
+                String playerName2 = scanner.nextLine();
+                p2.setName(playerName2);
+                AsciiArt.printCenteredString("Player 2: " + playerName2 + '\n', 0);
+                AsciiArt.sleepMillis(500);
+                randomItems(p1);
+                randomItems(p2);
+                return;
+            } catch (InputMismatchException e) {
+                System.out.println("잘못된 입력입니다.");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        System.out.println("정상적으로 게임이 시작되지 않아 종료합니다.");
+        scannerClose();
+        System.exit(1); // 프로그램 종료
     }
 
     public void startRound(){
