@@ -75,15 +75,15 @@ public class User {
                         System.out.println("잘못된 입력입니다.");
                         break;
                 }
-            }catch (NumberFormatException e) {
+            }catch (NumberFormatException | IndexOutOfBoundsException e) {
                 System.out.println("잘못된 입력입니다.");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            System.out.println("턴을 너무 많이 사용하여, 턴이 종료됩니다.");
-            setMyTurn(false);
-            this.enemy.setMyTurn(true);
         }
+        System.out.println("턴을 너무 많이 사용하여, 턴이 종료됩니다.");
+        setMyTurn(false);
+        this.enemy.setMyTurn(true);
     }
 
 
