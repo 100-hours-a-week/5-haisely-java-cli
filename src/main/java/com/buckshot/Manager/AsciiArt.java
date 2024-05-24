@@ -67,11 +67,11 @@ public class AsciiArt {
                 "|  %s      |  %s      |                  |  %s      |  %s      |\n" +
                 "--------------------------------------------------------------------------------\n" +
                 "%s                                                                    %s\n";
-        String formatted = getString(gm, base);
+        String formatted = getGameInfo(gm, base);
         System.out.println(formatted);
     }
 
-    private static String getString(GameManager gm, String base) {
+    private static String getGameInfo(GameManager gm, String base) {
         User p1 = gm.getP1();
         User p2 = gm.getP2();
         ArrayList<String> items = new ArrayList<>();

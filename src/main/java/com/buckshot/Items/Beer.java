@@ -12,7 +12,7 @@ public class Beer extends GunItem {
 
     @Override
     public void useGun(Gun gun){
-        dumpBullet();
+        dumpBullet(gun);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Beer extends GunItem {
         }
     }
 
-    public void dumpBullet(){
+    public void dumpBullet(Gun gun){
         this.removed = gun.removeBullet();
     }
 }
