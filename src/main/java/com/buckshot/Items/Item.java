@@ -1,11 +1,10 @@
 package com.buckshot.Items;
 
-public class Item {
+public abstract class Item {
     String name;
     String description;
-    public void use(){
-        decribeItem();
-    }
+    public abstract void use();
+
 
     public String getName() {
         return name;

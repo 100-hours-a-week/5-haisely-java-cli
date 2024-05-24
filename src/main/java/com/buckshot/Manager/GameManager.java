@@ -67,13 +67,13 @@ public class GameManager {
         ArrayList<Item> newItems = new ArrayList<Item>();
         for (int i = 0; i<ITEM_COUNT ; i++){
             int randNum = (int)(Math.random()*ITEM_NUMBER);
-            newItems.add(getItemsById(randNum, user));
+            newItems.add(getItemById(randNum, user));
         }
         user.setItems(newItems);
         return;
     }
 
-    public Item getItemsById(int randNum, User user) {
+    public Item getItemById(int randNum, User user) {
         return switch (randNum) {
             case 0 -> new Beer(this.gun);
             case 1 -> new Cigarette(user);
