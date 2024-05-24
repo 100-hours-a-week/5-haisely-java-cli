@@ -68,6 +68,11 @@ java com.buckshot.Main
 └── settings.gradle.kts
 ```
 
+## 프로젝트 설계도
+![Buckshot Roulette](https://github.com/100-hours-a-week/5-haisely-java-cli/assets/98401161/9eff38ab-4bbd-47e5-9c9d-244d035b5ff3)
+
+
+
 ## 프로젝트 설명
 
 
