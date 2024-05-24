@@ -13,7 +13,7 @@ public class Knife extends GunItem {
 
     @Override
     public void useGun(Gun gun){
-        setDamage(gun);
+        setGunDamage(gun);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Knife extends GunItem {
         System.out.println("장착된 총알의 데미지가 "+this.damage+ "가 되었습니다!\n");
     }
 
-    private void setDamage(Gun gun){
+    private void setGunDamage(Gun gun){
         gun.setBulletDamage(this.damage);
     }
 

@@ -2,16 +2,16 @@ package com.buckshot.Items;
 
 import com.buckshot.Core.User;
 
-public class UserItem extends Item {
+public abstract class UserItem extends Item {
     User target;
     public UserItem(User target) {
         this.target = target;
     }
-    public void useUser(User user){}
-    public void describeUser(){}
+    public abstract void useUser(User user);
+    public abstract void describeUser();
     @Override
     public void use(){
-        super.use();
+        decribeItem();
         useUser(this.target);
         describeUser();
     }

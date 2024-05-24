@@ -6,6 +6,7 @@ import com.buckshot.Items.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameManager {
@@ -14,6 +15,9 @@ public class GameManager {
     private final Gun gun;
     private int round = 1;
     private static final Scanner scanner = new Scanner(System.in);
+
+    final int ITEM_COUNT = 4;
+    final int ITEM_NUMBER = 5;
 
     public GameManager(User p1, User p2, Gun gun) {
         this.p1 = p1;
@@ -61,15 +65,15 @@ public class GameManager {
 
     public void randomItems(User user){
         ArrayList<Item> newItems = new ArrayList<Item>();
-        for (int i = 0; i<4 ; i++){
-            int randNum = (int)(Math.random()*5);
-            newItems.add(getItemsById(randNum, user));
+        for (int i = 0; i<ITEM_COUNT ; i++){
+            int randNum = (int)(Math.random()*ITEM_NUMBER);
+            newItems.add(getItemById(randNum, user));
         }
         user.setItems(newItems);
         return;
     }
 
-    public Item getItemsById(int randNum, User user) {
+    public Item getItemById(int randNum, User user) {
         return switch (randNum) {
             case 0 -> new Beer(this.gun);
             case 1 -> new Cigarette(user);
@@ -80,27 +84,38 @@ public class GameManager {
         };
     }
 
-    public void initGame(){
-        // 메시지 출력
-        AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
-        AsciiArt.printCenteredString("   >  ", 8);
-        String playerName1 = scanner.nextLine();
-        p1.setName(playerName1);
-        AsciiArt.printCenteredString("Player 1: " + playerName1+'\n', 0);
-        AsciiArt.sleepMillis(500);
 
-        AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.", 3);
-        AsciiArt.printCenteredString("   >  ", 8);
-        String playerName2 = scanner.nextLine();
-        p2.setName(playerName2);
-        AsciiArt.printCenteredString("Player 2: " + playerName2+'\n', 0);
-        AsciiArt.sleepMillis(500);
-        randomItems(p1);
-        randomItems(p2);
-        return;
+    public void startGame(){
+        for (int i = 0; i < 10; i++) {
+            // 메시지 출력
+            try {
+                AsciiArt.printCenteredStringPretty("Player 1의 이름을 작성하세요.", 3);
+                AsciiArt.printCenteredString("   >  ", 8);
+                String playerName1 = scanner.nextLine();
+                p1.setName(playerName1);
+                AsciiArt.printCenteredString("Player 1: " + playerName1 + '\n', 0);
+                AsciiArt.sleepMillis(500);
+                AsciiArt.printCenteredStringPretty("Player 2의 이름을 작성하세요.", 3);
+                AsciiArt.printCenteredString("   >  ", 8);
+                String playerName2 = scanner.nextLine();
+                p2.setName(playerName2);
+                AsciiArt.printCenteredString("Player 2: " + playerName2 + '\n', 0);
+                AsciiArt.sleepMillis(500);
+                randomItems(p1);
+                randomItems(p2);
+                return;
+            } catch (InputMismatchException e) {
+                System.out.println("잘못된 입력입니다.");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        System.out.println("정상적으로 게임이 시작되지 않아 종료합니다.");
+        scannerClose();
+        System.exit(1); // 프로그램 종료
     }
 
-    public void initRound(){
+    public void startRound(){
         AsciiArt.printCenteredStringPretty(this.round + " Round가 시작됩니다.", 1);
         AsciiArt.sleepMillis(1000);
         randomBullets(this.gun);

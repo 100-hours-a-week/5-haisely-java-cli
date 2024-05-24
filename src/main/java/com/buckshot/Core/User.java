@@ -18,7 +18,7 @@ public class User {
     private Scanner scanner;
     private GameManager gm;
 
-    public void useItem(int index){
+    private void useItem(int index){
         Item i = items.get(index -1);
         System.out.println(this.name+"가 "+ i.getName()+"을 사용했습니다.");
         AsciiArt.sleepMillis(1000);
@@ -40,7 +40,8 @@ public class User {
             AsciiArt.sleepMillis(1000);
             return;
         }
-        while(myTurn && !gun.isEmptyBullet()){
+        for(int i = 0; i<10; i++){
+            if(!myTurn || gun.isEmptyBullet()){break;}
             AsciiArt.printState(this.gm);
             AsciiArt.printCenteredStringPretty("1. 아이템 사용 2. 나에게 쏘기 3. 적에게 쏘기", 6);
             AsciiArt.printCenteredString("   >  ", 8);
@@ -64,7 +65,7 @@ public class User {
                         }
                         break;
                     case 3:
-                        System.out.println("\n"+this.name + "가 " + enemy.name + "에게 총을 쏩니다.\n");
+                        System.out.println("\n" + this.name + "가 " + enemy.name + "에게 총을 쏩니다.\n");
                         AsciiArt.sleepMillis(500);
                         gun.shoot(enemy);
                         setMyTurn(false);
@@ -74,12 +75,15 @@ public class User {
                         System.out.println("잘못된 입력입니다.");
                         break;
                 }
-            }catch (NumberFormatException e) {
+            }catch (NumberFormatException | IndexOutOfBoundsException e) {
                 System.out.println("잘못된 입력입니다.");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
+        System.out.println("턴을 너무 많이 사용하여, 턴이 종료됩니다.");
+        setMyTurn(false);
+        this.enemy.setMyTurn(true);
     }
 
 
