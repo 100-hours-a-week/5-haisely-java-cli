@@ -69,7 +69,8 @@ java com.buckshot.Main
 ```
 
 ## 프로젝트 설계도
-![Buckshot Roulette](https://github.com/100-hours-a-week/5-haisely-java-cli/assets/98401161/9eff38ab-4bbd-47e5-9c9d-244d035b5ff3)
+![Buckshot Roulette](https://github.com/100-hours-a-week/5-haisely-java-cli/assets/98401161/1b9ee5ab-3c81-4da5-af7a-1aaffebd449b)
+
 
 
 
